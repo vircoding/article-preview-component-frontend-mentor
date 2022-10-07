@@ -30,6 +30,14 @@ body {
     background-color: var(--light-grayish-blue);
 }
 
+object {
+    pointer-events: none;
+}
+
+.hover:hover {
+    cursor: pointer;
+}
+
 /* Card */
 .card {
     width: 730px;
@@ -52,11 +60,8 @@ body {
 }
 
 /* Card | Info */
-.card-info {
-    padding: 34px 34px 0;
-}
-
 .info-title {
+    padding: 34px 34px 0;
     font-size: 16px;
     line-height: 1.4;
     color: var(--very-dark-grayish-blue);
@@ -66,33 +71,48 @@ body {
 .info-paragraph {
     line-height: 1.5;
     color: var(--desaturated-dark-blue);
-    margin-bottom: 25px;
+    margin-bottom: 19px;
+    padding: 0 34px;
 }
 
-/* Info | Footer | User */
+.info-footer {
+    position: relative;
+}
+
+/* Card | Info | Footer | User */
 .footer-user {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
+    padding: 0 34px 20px;
+    position: absolute;
+    top: 15px;
+    background-color: #fff;
 }
 
 .user-avatar {
     width: 42px;
     border-radius: 50%;
+    z-index: 1;
 }
 
 .user-shareIcon {
     border-radius: 50%;
     background-color: var(--light-grayish-blue);
     width: 33px;
-    padding: 9px;
+    padding: 8px;
 }
 
-/* Info | Footer | Texts */
+.user-iconContainer {
+    z-index: 3;
+}
+
+/* Card | Info | Footer | User | Texts */
 .user-texts {
     flex-grow: 2;
     margin-left: 15px;
+    z-index: 1;
 }
 
 .texts-name {
@@ -105,16 +125,32 @@ body {
     color: var(--grayish-blue);
 }
 
-/* 
+/* Card | Info | Footer | Share */
+.footer-share {
+    background-color: var(--very-dark-grayish-blue);
+    height: 73px;
+    z-index: 2;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 34px;
+}
 
+.share-title {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--grayish-blue);
+}
 
+.share-icon {
+    margin-left: 15px;
+}
 
-
-
-
-
-
- */
+.iconActive {
+    background-color: hsl(214, 17%, 51%);
+}
 
 /* Media Queries */
 @media (min-width: 720px) {
@@ -146,5 +182,15 @@ body {
     .info-paragraph {
         font-size: 13px;
         margin-bottom: 20px;
+    }
+
+    .user-shareIcon {
+        width: 33px;
+        padding: 9px;
+    }
+
+    /* TODO: Remove after improve footer desktop design */
+    .card {
+        height: 500px;
     }
 }
