@@ -28,6 +28,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: var(--light-grayish-blue);
+    user-select: none; /* prevent user selection */
 }
 
 object {
@@ -101,7 +102,8 @@ object {
     border-radius: 50%;
     background-color: var(--light-grayish-blue);
     width: 33px;
-    padding: 8px;
+    padding: 9px;
+    display: block;
 }
 
 .user-iconContainer {
@@ -134,6 +136,9 @@ object {
     display: flex;
     align-items: center;
     padding-left: 34px;
+    transform: translateX(-100%);
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
 }
 
 .share-title {
@@ -184,13 +189,29 @@ object {
         margin-bottom: 20px;
     }
 
-    .user-shareIcon {
-        width: 33px;
-        padding: 9px;
-    }
-
-    /* TODO: Remove after improve footer desktop design */
+    /* TODO: Remove after improve footer mobile design */
     .card {
         height: 500px;
+    }
+}
+
+/* Key Frames */
+@keyframes unhide {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes hide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
     }
 }
