@@ -1,3 +1,9 @@
+function animate(animation, timing) {
+    const element = document.querySelector('.footer-share');
+    element.style.animationTimingFunction = timing;
+    element.style.animationName = animation;
+}
+
 function unhideShare() {
     path.style.fill = 'hsl(210, 46%, 95%)';
     shareIcon.classList.add('iconActive');
@@ -10,15 +16,8 @@ function hideShare() {
     animate('hide', 'ease-in');
 }
 
-function animate(animation, timing) {
-    const element = document.querySelector('.footer-share');
-    element.style.animationTimingFunction = timing;
-    element.style.animationName = animation;
-}
-
 shareIcon.addEventListener('load', () => {
-    const svgDoc = shareIcon.contentDocument;
-    path = svgDoc.firstElementChild.firstElementChild;
+    path = shareIcon.contentDocument.firstElementChild.firstElementChild;
 
     document
         .querySelector('.user-iconContainer')
