@@ -153,48 +153,6 @@ object {
     background-color: hsl(214, 17%, 51%);
 }
 
-/* Media Queries */
-@media (min-width: 720px) {
-    /* Card */
-    .card {
-        height: 280px;
-        display: grid;
-        grid-template-columns: 2fr 3fr;
-    }
-
-    .picture-img {
-        width: 123%;
-        height: 100%;
-        object-fit: cover;
-        object-position: initial;
-    }
-
-    .card-info {
-        padding: 35px 43px 0;
-    }
-
-    .info-title {
-        font-size: 20px;
-        margin: 0 0 12px;
-    }
-
-    .info-paragraph {
-        font-size: 13px;
-        margin-bottom: 20px;
-    }
-}
-
-@media (max-width: 340px) {
-    /* Card */
-    .share-title {
-        display: none;
-    }
-
-    .facebook {
-        margin-left: 0;
-    }
-}
-
 /* Key Frames */
 @keyframes unhide {
     from {
@@ -213,5 +171,76 @@ object {
 
     to {
         transform: translateX(-100%);
+    }
+}
+
+/* Media Queries */
+@media (min-width: 720px) {
+    /* Card */
+    .card {
+        height: 280px;
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+    }
+
+    .picture-img {
+        width: 123%;
+        height: 100%;
+        object-fit: cover;
+        object-position: initial;
+    }
+
+    .info-title {
+        font-size: 20px;
+        margin: 0 0 12px;
+    }
+
+    .info-paragraph {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+
+    .footer-share {
+        position: fixed;
+        width: 250px;
+        height: 55px;
+        transform: scaleX(0);
+        border-radius: 10px;
+        padding: 0;
+        justify-content: center;
+        transform-origin: right;
+        animation-duration: 0.3s;
+    }
+
+    /* Key Frames */
+    @keyframes unhide {
+        from {
+            transform: translate(205px, -50px) scaleX(0);
+        }
+
+        to {
+            transform: translate(260px, -50px) scaleX(1);
+        }
+    }
+
+    @keyframes hide {
+        from {
+            transform: translate(260px, -50px) scaleX(1);
+        }
+
+        to {
+            transform: translate(130px, -50px) scaleX(0);
+        }
+    }
+}
+
+@media (max-width: 340px) {
+    /* Card */
+    .share-title {
+        display: none;
+    }
+
+    .facebook {
+        margin-left: 0;
     }
 }

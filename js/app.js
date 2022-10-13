@@ -19,9 +19,19 @@ function hideShare() {
 shareIcon.addEventListener('load', () => {
     path = shareIcon.contentDocument.firstElementChild.firstElementChild;
 
-    document
-        .querySelector('.user-iconContainer')
-        .addEventListener('click', () =>
-            shareIcon.classList.contains('iconActive') ? hideShare() : unhideShare()
-        );
+    // hide share just clicking the share button
+
+    // document
+    //     .querySelector('.user-iconContainer')
+    //     .addEventListener('click', () =>
+    //         shareIcon.classList.contains('iconActive') ? hideShare() : unhideShare()
+    //     );
+
+    // hide share clicking anywhere
+    document.addEventListener('click', (e) => {
+        if (e.target.matches('.user-iconContainer'))
+            shareIcon.classList.contains('iconActive') ? hideShare() : unhideShare();
+        if (!e.target.matches('.user-iconContainer') & shareIcon.classList.contains('iconActive'))
+            hideShare();
+    });
 });
