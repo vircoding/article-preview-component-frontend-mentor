@@ -212,24 +212,34 @@ object {
         animation-duration: 0.3s;
     }
 
+    .share-triangle {
+        background-color: inherit;
+        width: 25px;
+        height: 13px;
+        clip-path: polygon(50% 100%, 0 0, 100% 0);
+        position: absolute;
+        bottom: -13px;
+        left: 115px;
+    }
+
     /* Key Frames */
     @keyframes unhide {
         from {
-            transform: translate(205px, -50px) scaleX(0);
+            transform: translate(205px, -70px) scaleX(0);
         }
 
         to {
-            transform: translate(260px, -50px) scaleX(1);
+            transform: translate(260px, -70px) scaleX(1);
         }
     }
 
     @keyframes hide {
         from {
-            transform: translate(260px, -50px) scaleX(1);
+            transform: translate(260px, -70px) scaleX(1);
         }
 
         to {
-            transform: translate(130px, -50px) scaleX(0);
+            transform: translate(200px, -70px) scaleX(0);
         }
     }
 }
